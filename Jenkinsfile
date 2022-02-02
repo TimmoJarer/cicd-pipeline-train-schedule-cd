@@ -15,6 +15,7 @@ pipeline {
 
          steps {
             echo 'Testing...'
+            sh 'ls /var/lib/jenkins/jobs/train-schedule/branches/master/builds/16/archive/dist/trainSchedule.zip'
          }
     }
 }
