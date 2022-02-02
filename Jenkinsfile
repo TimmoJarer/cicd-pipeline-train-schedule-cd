@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     stages {
@@ -9,19 +8,7 @@ pipeline {
                 archiveArifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
-        
-
-         stage('Test'){
-         when {
-              branch 'master'
-         }
-
-         steps {
-            
-            echo 'Testing...'
-        
-         }
-    }
+         
 }
 }
 /*
