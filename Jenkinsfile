@@ -17,8 +17,8 @@ pipeline {
          withCredentials([usernamePassword(credentialsId: 'admin', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]){ 
             
             echo 'Testing...'
-            sh 'unzip /var/lib/jenkins/jobs/train-schedule/branches/master/builds/27/archive/dist/trainSchedule.zip -d /tmp/train-schedule'
-            sh 'sudo systemctl start trains -u $USERNAME -p $USERPASS'
+            sh 'unzip /var/lib/jenkins/jobs/train-schedule/branches/master/builds/28/archive/dist/trainSchedule.zip -d /tmp/train-schedule'
+            sh 'sudo -u $USERNAME -p $USERPASS systemctl start trains'
             }
          }
     }
