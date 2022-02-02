@@ -14,12 +14,11 @@ pipeline {
          }
 
          steps {
-         withCredentials([usernamePassword(credentialsId: 'admin', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]){ 
             
             echo 'Testing...'
-            sh 'unzip /var/lib/jenkins/jobs/train-schedule/branches/master/builds/31/archive/dist/trainSchedule.zip -d /tmp/train-schedule'
+            sh 'unzip /var/lib/jenkins/jobs/train-schedule/branches/master/builds/32/archive/dist/trainSchedule.zip -d /tmp/train-schedule'
             sh 'sudo ls'
-            }
+            
          }
     }
 }
