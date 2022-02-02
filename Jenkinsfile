@@ -16,8 +16,8 @@ pipeline {
          steps {
             
             echo 'Testing...'
-            sh 'unzip /var/lib/jenkins/jobs/train-schedule/branches/master/builds/32/archive/dist/trainSchedule.zip -d /tmp/train-schedule'
-            sh 'sudo ls'
+            sh 'unzip /var/lib/jenkins/jobs/train-schedule/branches/master/builds/33/archive/dist/trainSchedule.zip -d /tmp/train-schedule'
+            sh 'sudo systemctl start trains'
             
          }
     }
