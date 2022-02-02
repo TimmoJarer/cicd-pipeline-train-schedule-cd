@@ -10,13 +10,27 @@ pipeline {
             }
         }
         
+        /*
         stage('DeployApp') {
             when {
                 branch 'master'
             }
             steps {
-               execCommand: 'sudo dist/trainSchedule.zip -d /opt/train-schedule && sudo systemctl start train-schedule'
+               //execCommand: 'sudo dist/trainSchedule.zip -d /opt/train-schedule && sudo systemctl start train-schedule'
+               sh '
             }
+         }
+         */
+
+         stage('Test'){
+         when {
+              branch 'master'
+         }
+
+         steps {
+            
+            echo 'Testing...'
+        
          }
     }
 }
