@@ -1,40 +1,26 @@
 pipeline {
     agent any
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building...'
-                sh './gradlew build --no-daemon'
-                archiveArtifacts artifacts: 'dist/trainSchedule.zip'
-            }
-        }        
-        stage('Test'){
-         when {
-              branch 'master'
-         }
+    
+    stages{
+	
+	stage('Build'){
 
-         steps {
-            
-            echo 'Testing...'
-            sh 'unzip /var/lib/jenkins/jobs/train-schedule/branches/master/builds/33/archive/dist/trainSchedule.zip -d /tmp/train-schedule'
-            sh 'sudo systemctl start trains'
-            
-         }
+	    echo 'Building...'	    
+
+	}
+
+	stage('Test'){
+
+	    echo 'Testing...'
+	}
+
+	stage('Deployment'){
+
+	    echo 'Deploying...'
+	
+	}
+
     }
-}
+
 }
 
-/*
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Running build automation'
-                sh './gradlew build --no-daemon'
-                archiveArtifacts artifacts: 'dist/trainSchedule.zip'
-            }
-        }
-    }
-}
-*/
