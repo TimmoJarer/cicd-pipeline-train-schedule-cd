@@ -8,7 +8,7 @@ pipeline {
 	    steps{
 
 	        echo 'Building...'
-		sh './gradle build'	    
+		sh './gradlew build'	    
   	    }
 	}
 
